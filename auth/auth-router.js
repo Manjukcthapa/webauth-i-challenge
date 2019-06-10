@@ -9,7 +9,7 @@ router.post('/register', (req, res) => {
   // hash the password
   const hash = bcrypt.hashSync(user.password, 8); // password gets re-hashed 2 ^ 8 times
 
-  user.password = hash; // <<<<<<<<<<<<<<<<<<<
+  user.password = hash; 
 
   Users.add(user)
     .then(saved => {
