@@ -20,7 +20,14 @@ const sessionConfig = {
     maxAge:1000 * 60 * 10,
     secure:false,
     httpOnly:true
-  }
+  },
+  store: new KnexSessionStore({
+    knex: require('../database/dbConfig.js'),
+    tablename: 'sessions',
+    sidfieldname: 'sid',
+    createtable: true,
+    clearInterval: 1000 * 60 * 30,
+  }),
 }
 
 

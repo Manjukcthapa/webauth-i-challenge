@@ -38,6 +38,12 @@ router.post('/login', (req, res) => {
     });
 });
 
+router.delete('/delete', (req, res) => {
+  if (req.session) {
+    req.session.destroy();
+  }
+  res.status(200).json({ message: 'good bye' });
+});
 
 
 
