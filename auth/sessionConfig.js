@@ -1,7 +1,6 @@
 const session = require('express-session');
 const KnexSessionStore = require('connect-session-knex')(session); 
 
-
 module.exports = {
     name:'monster',
     secret:'keep it secret, keep it safe!',
